@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:gravity="center"
-	android:orientation="vertical"
-	android:paddingHorizontal="32dp"
-	android:paddingBottom="?actionBarSize">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
 
-	<org.draken.usagi.core.image.CoilImageView
-		android:id="@+id/icon"
-		android:layout_width="192dp"
-		android:layout_height="192dp"
-		android:contentDescription="@null"
-		android:scaleType="fitCenter"
-		app:crossfadeEnabled="false"
-		tools:src="@drawable/ic_empty_favourites" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:importantForAccessibility="no"
+        android:alpha="0.6"
+        tools:src="@drawable/ic_empty_common" />
 
-	<TextView
-		android:id="@+id/textPrimary"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/margin_normal"
-		android:gravity="center"
-		android:textAppearance="?attr/textAppearanceTitleLarge"
-		tools:text="@tools:sample/lorem[3]" />
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?colorOnSurface"
+        tools:text="Nothing here" />
 
-	<TextView
-		android:id="@+id/textSecondary"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/margin_normal"
-		android:gravity="center"
-		android:textAppearance="?attr/textAppearanceBodyMedium"
-		tools:text="@tools:sample/lorem[15]" />
+    <TextView
+        android:id="@+id/textView_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?colorOnSurfaceVariant"
+        android:visibility="gone"
+        tools:text="Try searching for something"
+        tools:visibility="visible" />
 
-	<Button
-		android:id="@+id/button_retry"
-		style="?materialButtonTonalStyle"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/margin_normal"
-		android:visibility="gone"
-		tools:text="@string/try_again"
-		tools:visibility="visible" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        tools:text="Explore"
+        tools:visibility="visible" />
 
 </LinearLayout>

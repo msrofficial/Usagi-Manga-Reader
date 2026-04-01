@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:layout_margin="@dimen/margin_small">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?materialCardViewFilledStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="?colorSecondaryContainer"
+    app:cardCornerRadius="16dp"
+    app:strokeWidth="0dp">
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center_vertical"
-		android:orientation="horizontal"
-		android:paddingHorizontal="@dimen/margin_normal">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-		<com.google.android.material.imageview.ShapeableImageView
-			android:id="@+id/imageView_icon"
-			android:layout_width="56dp"
-			android:layout_height="56dp"
-			android:background="?colorSurfaceVariant"
-			android:scaleType="center"
-			app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Usagi.Circle"
-			tools:src="@drawable/ic_tap_reorder" />
+        <ImageView
+            android:id="@+id/imageView_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_info_outline"
+            app:tint="?colorOnSecondaryContainer"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:paddingTop="@dimen/margin_normal"
-			android:paddingBottom="@dimen/margin_small">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?colorOnSecondaryContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tip text here" />
 
-			<TextView
-				android:id="@+id/textView"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="@dimen/margin_normal"
-				android:textAppearance="?textAppearanceBodyMedium"
-				tools:text="@string/sources_reorder_tip" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_close"
+            style="?materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/close"
+            android:layout_marginTop="8dp"
+            app:icon="@drawable/ic_cancel_multiple"
+            app:iconTint="?colorOnSecondaryContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-			<Button
-				android:id="@+id/button_close"
-				style="?borderlessButtonStyle"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="end"
-				android:layout_marginTop="4dp"
-				android:text="@string/got_it" />
-		</LinearLayout>
-
-	</LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
